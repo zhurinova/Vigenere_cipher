@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string alphabet = "abcdefghijklmnopqrstuwxyz";
+string alphabet = " AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuWwXxYyZz\n,.!?\"–'()0123456789";
 
 int get_correct_number(int min, int max){
 	int n = 0;
@@ -76,6 +76,13 @@ string Encode(string text, string key) {
 	return code;
 }
 
+//string Encode() {
+//	while ()
+//	{
+//
+//	}
+//}
+
 string Decode(string text, string key) {
 	string code;
 	for (int i = 0; i < text.length(); i++) {
@@ -86,6 +93,7 @@ string Decode(string text, string key) {
 
 int main()
 {
+	//setlocale(LC_ALL, "Russian");
 	string text, key;
 	cout << "Enter keyword please" << endl;
 	cin >> key;
