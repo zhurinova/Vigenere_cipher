@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+string alphabet = "abcdefghijklmnopqrstuwxyz";
 
 int get_correct_number(int min, int max){
 	int n = 0;
@@ -89,7 +89,7 @@ int main()
 	string text, key;
 	cout << "Enter keyword please" << endl;
 	cin >> key;
-	for (auto& c : key) c = toupper(c);
+	//for (auto& c : key) c = toupper(c);
 
 	while (true) {
 		menu();
@@ -106,7 +106,7 @@ int main()
 			string code;
 			text = load();
 			cout << text;
-			for (auto& c : text) c = toupper(c);
+			//for (auto& c : text) c = toupper(c);
 			code = Encode(text, key);
 			cout << code << endl;
 			save(code);
