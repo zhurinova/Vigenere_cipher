@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <Windows.h>
 #include <fstream>
 
 using namespace std;
@@ -91,7 +92,6 @@ void Decode(string key, string read_file, string record_file) {
 
 int main()
 {
-
 	string key;
 	cout << "Enter keyword please" << endl;
 	cin >> key;
@@ -110,9 +110,9 @@ int main()
 		}
 		case 1:
 		{
-			cout << "Enter the file name to read from: " << endl;
+			cout << "Enter the file name to read: " << endl;
 			read_file = read_from_file();
-			cout << "Enter the file name to record to: " << endl;
+			cout << "Enter the file name to record: " << endl;
 			record_file = read_from_file();
 
 			Encode(key, read_file, record_file);
@@ -120,9 +120,9 @@ int main()
 		}
 		case 2:
 		{
-			cout << "Enter the file name to read from: " << endl;
+			cout << "Enter the file name to read: " << endl;
 			read_file = read_from_file();
-			cout << "Enter the file name to record to: " << endl;
+			cout << "Enter the file name to record: " << endl;
 			record_file = read_from_file();
 
 			Decode(key, read_file, record_file);
