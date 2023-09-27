@@ -12,7 +12,7 @@ void menu()
 	cout << "2.Decode" << endl;
 }
 
-int get_correct_number(int min, int max){
+int get_correct_number(int min, int max) {
 	int n = 0;
 	while (((cin >> n).fail()) || (n < min) || (n > max) || (cin.get() != '\n')) {
 		cin.clear();
@@ -44,15 +44,10 @@ void Encode(string key, string read_file, string record_file) {
 		cerr << "File open error" << endl;
 	}
 	else {
-		while (fin.get(code)) {
-			if (code == '\n')
-			{
-				fout << endl;
-			}
-			else {
-				fout << (unsigned char)(code + key[i % key.length()]);
-				i++;
-			}
+		while (!fin.eof()) {
+			code = fin.get();
+			fout << (unsigned char)(code + key[i % key.length()]);
+			i++;
 		}
 		fin.close();
 		fout.close();
@@ -75,15 +70,10 @@ void Decode(string key, string read_file, string record_file) {
 		cerr << "File open error" << endl;
 	}
 	else {
-		while (fin.get(code)) {
-			if (code == '\n')
-			{
-				fout << endl;
-			}
-		else {
+		while (!fin.eof()) {
+			code = fin.get();
 			fout << (unsigned char)(code - key[i % key.length()]);
 			i++;
-		}
 		}
 		fin.close();
 		fout.close();
